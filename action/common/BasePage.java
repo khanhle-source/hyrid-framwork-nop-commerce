@@ -17,6 +17,10 @@ public class BasePage {
     private long longtimeout = 30;
     private long shorttimeout = 5;
 
+    public static BasePage getBasePageObject () {
+        return new BasePage();
+    }
+
     // get url
     public void getURl (WebDriver driver, String url) {
         driver.get(url);
