@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class User_01_Register_Login_I {
+public class Level2_Register_Login_BasePage {
     WebDriver driver;
     String emailAddress;
 
@@ -25,7 +25,7 @@ public class User_01_Register_Login_I {
         driver = new FirefoxDriver();
 
         //Initial
-        basePage = new BasePage();
+        basePage = BasePage.getBasePageObject();
 
         emailAddress = "afc" + random() + "@email.vn";
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -64,7 +64,7 @@ public class User_01_Register_Login_I {
 
         basePage.waitForElementClickable(driver, "//a[@class='ico-logout']");
         basePage.clickToElement(driver, "//a[@class='ico-logout']");
-
+        
     }
 
     public int random () {

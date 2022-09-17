@@ -12,7 +12,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 //1 class ke thua duoc 1 class, nhung 1 class ke thua dc nhieu interface
-public class User_01_Register_Login_III extends BasePage {
+public class Level3_Register_Login_BasePage extends BasePage {
     WebDriver driver;
     String emailAddress;
 
