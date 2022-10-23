@@ -1,11 +1,12 @@
 package com.nopcommerce.user;
 
-import common.BasePage;
+import common.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObject.HomePageObject;
 import pageObject.LoginPageObject;
@@ -15,7 +16,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 //1 class ke thua duoc 1 class, nhung 1 class ke thua dc nhieu interface
-public class Level4_Register_Login_PageObject  {
+public class Level4_Register_Login_PageObject extends BaseTest {
     WebDriver driver;
     String emailAddress;
 
@@ -27,11 +28,11 @@ public class Level4_Register_Login_PageObject  {
     private String lastName;
     private String password;
 
-
+    @Parameters("browser")
     @BeforeClass
-    public void beforeClass() {
-        System.setProperty("webdriver.gecko.driver", projectPath + "/browserDriver/geckodriver");
-        driver = new FirefoxDriver();
+    public void beforeClass(String browserName) {
+        driver = getBrowerDriver(browserName);
+
         homePage = new HomePageObject(driver);
         registerPage = new RegisterPageObject(driver);
         loginPage = new LoginPageObject();
@@ -40,8 +41,7 @@ public class Level4_Register_Login_PageObject  {
         lastName = "le";
         password ="123456";
         emailAddress = "afc" + random() + "@email.vn";
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.get("https://demo.nopcommerce.com/");
+
     }
     @Test
     public void tc_01_Register_Empty_Data() {
