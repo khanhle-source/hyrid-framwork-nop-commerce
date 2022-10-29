@@ -1,5 +1,6 @@
 package com.nopcommerce.user;
 
+import common.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
@@ -14,7 +15,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 //1 class ke thua duoc 1 class, nhung 1 class ke thua dc nhieu interface
-public class Level4_Register_Register_PageObject {
+public class Level4_Register_Login_PageObject  {
     WebDriver driver;
     String emailAddress;
 
@@ -43,7 +44,7 @@ public class Level4_Register_Register_PageObject {
         driver.get("https://demo.nopcommerce.com/");
     }
     @Test
-    public void Register_01_Empty_Data() {
+    public void tc_01_Register_Empty_Data() {
        System.out.println("Home Page - Step 01: Click to Register Link");
         homePage.clicktoRegisterLink();
 
@@ -60,7 +61,7 @@ public class Level4_Register_Register_PageObject {
     }
 
     @Test
-    public void Register_02_Invalid_Email() {
+    public void tc_02_Register_Invalid_Email() {
         System.out.println("Home Page - Step 01: Click to Register Link");
         homePage.clicktoRegisterLink();
 
@@ -79,7 +80,7 @@ public class Level4_Register_Register_PageObject {
     }
 
     @Test
-    public void Register_03_Success () {
+    public void tc_03_Register_Success () {
         System.out.println("Home Page - Step 01: Click to Register link");
         homePage.clicktoRegisterLink();
 
@@ -101,7 +102,7 @@ public class Level4_Register_Register_PageObject {
     }
 
     @Test
-    public void Register_04_Exist_Email() {
+    public void tc_04_Register_Exist_Email() {
         System.out.println("Home Page - Step 01: Click to Register link");
         homePage.clicktoRegisterLink();
 
@@ -120,7 +121,7 @@ public class Level4_Register_Register_PageObject {
     }
 
     @Test
-    public void Register_05_Password_Less_Than_6_Chars() {
+    public void tc_05_Register_Password_Less_Than_6_Chars() {
         System.out.println("Home Page - Step 01: Click to Register link");
         homePage.clicktoRegisterLink();
 
@@ -139,7 +140,7 @@ public class Level4_Register_Register_PageObject {
     }
 
     @Test
-    public void Register_06_Invalid_Confirm_Password () {
+    public void tc_06_Register_Invalid_Confirm_Password () {
         System.out.println("Home Page - Step 01: Click to Register link");
         homePage.clicktoRegisterLink();
 
