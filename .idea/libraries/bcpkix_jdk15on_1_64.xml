@@ -1,0 +1,37 @@
+<component name="libraryTable">
+  <library name="bcpkix-jdk15on-1.64">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libDriverManager/bcpkix-jdk15on-1.64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/bcprov-jdk15on-1.64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/checker-qual-3.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/commons-codec-1.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/commons-compress-1.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/commons-io-2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/commons-lang-2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/dec-0.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/docker-java-3.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/docker-java-api-3.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/docker-java-core-3.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/docker-java-transport-3.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/docker-java-transport-httpclient5-3.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/error_prone_annotations-2.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/failureaccess-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/gson-2.8.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/guava-30.1.1-jre.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/httpclient5-5.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/httpcore5-5.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/j2objc-annotations-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/jackson-annotations-2.10.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/jackson-core-2.10.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/jackson-databind-2.10.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/jcl-over-slf4j-1.7.30.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/jna-5.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/jsoup-1.14.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/jsr305-3.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/slf4j-api-1.7.32.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libDriverManager/webdrivermanager-5.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
