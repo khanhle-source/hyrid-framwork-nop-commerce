@@ -12,6 +12,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class Level1_Register_Login_BasePage {
+    /*
     WebDriver driver;
     String emailAddress;
 
@@ -31,6 +32,7 @@ public class Level1_Register_Login_BasePage {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.get("https://demo.nopcommerce.com/");
     }
+
     @Test
     public void tc_01_Register_Empty_Data() {
         basePage.waitForElementClickable(driver, "//a[@class='ico-register']");
@@ -75,4 +77,5 @@ public class Level1_Register_Login_BasePage {
     public void afterClass () {
         driver.quit();
     }
+ */
 }

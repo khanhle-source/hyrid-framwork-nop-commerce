@@ -12,6 +12,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class Level2_Register_Login_BasePage {
+    /*
     WebDriver driver;
     String emailAddress;
 
@@ -75,4 +76,6 @@ public class Level2_Register_Login_BasePage {
     public void afterClass () {
         driver.quit();
     }
+
+     */
 }
