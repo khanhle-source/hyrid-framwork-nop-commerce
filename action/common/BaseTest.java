@@ -1,5 +1,6 @@
 package common;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -14,11 +15,13 @@ public class BaseTest {
 
     protected WebDriver getBrowerDriver (String browserName) {
         if (browserName.equals("firefox")) {
-            System.setProperty("webdriver.gecko.driver", projectPath + "/browserDriver/geckodriver");
+            WebDriverManager.firefoxdriver().setup();
+            //System.setProperty("webdriver.gecko.driver", projectPath + "/browserDriver/geckodriver");
             driverBaseTest = new FirefoxDriver();
         }
         else if (browserName.equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver", projectPath + "/browserDriver/chromedriver");
+            WebDriverManager.chromedriver().setup();
+            //System.setProperty("webdriver.chrome.driver", projectPath + "/browserDriver/chromedriver");
             driverBaseTest = new ChromeDriver();
         }
         else {
