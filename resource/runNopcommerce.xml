@@ -8,4 +8,10 @@
     </test>
 
 
+    <test name="Run on Chrome">
+        <parameter name = "browser" value="chrome" />
+        <classes>
+            <class name ="com.nopcommerce.user.Level4_Register_Login_PageObject"></class>
+        </classes>
+    </test>
 </suite>

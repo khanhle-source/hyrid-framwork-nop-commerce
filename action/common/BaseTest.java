@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,14 +16,14 @@ public class BaseTest {
 
     protected WebDriver getBrowerDriver (String browserName) {
         if (browserName.equals("firefox")) {
-            WebDriverManager.firefoxdriver().setup();
+            driverBaseTest =  WebDriverManager.firefoxdriver().create();
             //System.setProperty("webdriver.gecko.driver", projectPath + "/browserDriver/geckodriver");
-            driverBaseTest = new FirefoxDriver();
+          //  driverBaseTest = new FirefoxDriver();
         }
         else if (browserName.equals("chrome")) {
-            WebDriverManager.chromedriver().setup();
+            driverBaseTest = WebDriverManager.chromedriver().create();
             //System.setProperty("webdriver.chrome.driver", projectPath + "/browserDriver/chromedriver");
-            driverBaseTest = new ChromeDriver();
+           // driverBaseTest = new ChromeDriver();
         }
         else {
             throw new RuntimeException("Browser name invalid");

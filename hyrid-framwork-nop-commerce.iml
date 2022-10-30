@@ -29,5 +29,6 @@
     <orderEntry type="library" name="selenium-server-standalone-3.141.59" level="project" />
     <orderEntry type="library" name="commons-codec-1.13" level="project" />
     <orderEntry type="library" name="bcpkix-jdk15on-1.64" level="project" />
+    <orderEntry type="library" name="bcpkix-jdk15on-1.64 (2)" level="project" />
   </component>
 </module>
