@@ -2,21 +2,19 @@ package com.nopcommerce.user;
 
 import common.BaseTest;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObject.HomePageObject;
-import pageObject.LoginPageObject;
-import pageObject.RegisterPageObject;
+import pageFactory.HomePageObject;
+import pageFactory.LoginPageObject;
+import pageFactory.RegisterPageObject;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 //1 class ke thua duoc 1 class, nhung 1 class ke thua dc nhieu interface
-public class Level4_Register_Login_PageObject extends BaseTest {
+public class Level5_Register_Login_FactoryPageObject extends BaseTest {
     WebDriver driver;
     String emailAddress;
 
@@ -46,7 +44,7 @@ public class Level4_Register_Login_PageObject extends BaseTest {
     @Test
     public void tc_01_Register_Empty_Data() {
         System.out.println("Home Page - Step 01: Click to Register Link");
-        homePage.clicktoRegisterLink();
+        homePage.clickToRegisterLink();
 
         System.out.println("Register Page - Step 02: Click to Register Button");
         registerPage.clickToRegisterButton();
@@ -63,7 +61,7 @@ public class Level4_Register_Login_PageObject extends BaseTest {
     @Test
     public void tc_02_Register_Invalid_Email() {
         System.out.println("Home Page - Step 01: Click to Register Link");
-        homePage.clicktoRegisterLink();
+        homePage.clickToRegisterLink();
 
         System.out.println("Register Page - Step 02: Input to required fields");
         registerPage.inputToFirstNameTextbox(firstName);
@@ -82,7 +80,7 @@ public class Level4_Register_Login_PageObject extends BaseTest {
     @Test
     public void tc_03_Register_Success () {
         System.out.println("Home Page - Step 01: Click to Register link");
-        homePage.clicktoRegisterLink();
+        homePage.clickToRegisterLink();
 
         System.out.println("Register Page - Step 02: Input to required fields");
         registerPage.inputToFirstNameTextbox(firstName);
@@ -104,7 +102,7 @@ public class Level4_Register_Login_PageObject extends BaseTest {
     @Test
     public void tc_04_Register_Exist_Email() {
         System.out.println("Home Page - Step 01: Click to Register link");
-        homePage.clicktoRegisterLink();
+        homePage.clickToRegisterLink();
 
         System.out.println("Register Page - Step 02: Input to required fields");
         registerPage.inputToFirstNameTextbox(firstName);
@@ -123,7 +121,7 @@ public class Level4_Register_Login_PageObject extends BaseTest {
     @Test
     public void tc_05_Register_Password_Less_Than_6_Chars() {
         System.out.println("Home Page - Step 01: Click to Register link");
-        homePage.clicktoRegisterLink();
+        homePage.clickToRegisterLink();
 
         System.out.println("Register Page - Step 02: Input to required fields");
         registerPage.inputToFirstNameTextbox(firstName);
@@ -142,7 +140,7 @@ public class Level4_Register_Login_PageObject extends BaseTest {
     @Test
     public void tc_06_Register_Invalid_Confirm_Password () {
         System.out.println("Home Page - Step 01: Click to Register link");
-        homePage.clicktoRegisterLink();
+        homePage.clickToRegisterLink();
 
         System.out.println("Register Page - Step 02: Input to required fields");
         registerPage.inputToFirstNameTextbox(firstName);

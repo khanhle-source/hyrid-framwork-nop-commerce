@@ -8,5 +8,8 @@ public class HomePageUI {
     // final de khai bao bien co dinh, khong cho thay doi gia tri
 
     public static final String REGISTER_LINK = "//a[@class='ico-register']";
+    public static final String LOGIN_LINK = "//a[@class='ico-login']";
+    public static final String MYACCOUNT_LINK = "//a[@class='ico-account']";
+
 
 }

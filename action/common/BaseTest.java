@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
@@ -31,5 +32,10 @@ public class BaseTest {
         driverBaseTest.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driverBaseTest.get("https://demo.nopcommerce.com/");
         return driverBaseTest;
+    }
+
+    protected int random () {
+        Random rnd = new Random();
+        return rnd.nextInt(999);
     }
 }
