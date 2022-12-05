@@ -7,10 +7,17 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pageObject.AddressPageObject;
+import pageObject.MyProductReviewPageObject;
+import pageObject.MyRewardPointPageObject;
+import pageObject.PageGeneratorManager;
+import pageUIs.BasePageUI;
 
 import javax.swing.*;
 import java.util.List;
 import java.util.Set;
+
+import static pageObject.PageGeneratorManager.getAddressPage;
 
 public class BasePage {
     //chua cac ham dung chung cho page (package)
@@ -388,5 +395,26 @@ public class BasePage {
     protected void waitForElementClickable (WebDriver driver, String xpath) {
         WebDriverWait explicitWait = new WebDriverWait(driver, longtimeout);
         explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(xpath)));
+    }
+
+    //open address page
+    public AddressPageObject openAddressPage (WebDriver driver) {
+        waitForElementClickable(driver, BasePageUI.ADDRESS_LINK);
+        clickToElement(driver, BasePageUI.ADDRESS_LINK);
+        return PageGeneratorManager.getAddressPage(driver);
+    }
+
+    //open my reward points page
+    public MyRewardPointPageObject openMyRewardPointPage (WebDriver driver) {
+        waitForElementClickable(driver, BasePageUI.REWARD_POINT_LINK);
+        clickToElement(driver, BasePageUI.REWARD_POINT_LINK);
+        return PageGeneratorManager.getMyRewardPoint(driver);
+    }
+
+    //open my product review page
+    public MyProductReviewPageObject openMyProductReviewPage (WebDriver driver) {
+        waitForElementClickable(driver, BasePageUI.PRODUCT_REVIEW_LINK);
+        clickToElement(driver, BasePageUI.PRODUCT_REVIEW_LINK);
+        return PageGeneratorManager.getMyProductReview(driver);
     }
 }
