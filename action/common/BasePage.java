@@ -7,10 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pageObject.AddressPageObject;
-import pageObject.MyProductReviewPageObject;
-import pageObject.MyRewardPointPageObject;
-import pageObject.PageGeneratorManager;
+import pageObject.*;
 import pageUIs.BasePageUI;
 
 import javax.swing.*;
@@ -417,4 +414,6 @@ public class BasePage {
         clickToElement(driver, BasePageUI.PRODUCT_REVIEW_LINK);
         return PageGeneratorManager.getMyProductReview(driver);
     }
+
+
 }

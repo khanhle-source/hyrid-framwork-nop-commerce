@@ -9,7 +9,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObject.*;
 
-
 public class Level7_Switch_Page extends BaseTest {
     WebDriver driver;
     String emailAddress;
@@ -54,8 +53,8 @@ public class Level7_Switch_Page extends BaseTest {
         Assert.assertEquals(registerPage.getErrorMessageAtEmail(), "Email is required.");
         Assert.assertEquals(registerPage.getErrorMessageAtPassword(), "Password is required.");
         Assert.assertEquals(registerPage.getErrorMessageAtConfirmPassword(), "Password is required.");
-
     }
+
 
     @Test
     public void tc_02_Register_Invalid_Email() {
@@ -75,6 +74,7 @@ public class Level7_Switch_Page extends BaseTest {
         System.out.println("Register Page - Step 04: Verify error message displayed");
         Assert.assertEquals(registerPage.getErrorMessageAtEmail(), "Wrong email");
     }
+
 
     @Test
     public void tc_03_Register_Success () {
@@ -97,6 +97,7 @@ public class Level7_Switch_Page extends BaseTest {
         System.out.println("Register Page - Step 05: Click to Logout link");
         registerPage.clickToLogoutLink();
     }
+
 
     @Test
     public void tc_04_Register_Exist_Email() {
@@ -189,6 +190,10 @@ public class Level7_Switch_Page extends BaseTest {
 
         //tu my product review page sang my reward point page
         myRewardPointPage = myProductReviewPage.openMyRewardPointPage(driver);
+
+        // tu my reward point page sang my account page
+        myProductReviewPage = myRewardPointPage.openMyProductReviewPage(driver);
+
     }
 
     @AfterClass
