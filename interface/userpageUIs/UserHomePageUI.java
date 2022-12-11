@@ -1,6 +1,6 @@
-package pageUIs;
+package userpageUIs;
 
-public class HomePageUI {
+public class UserHomePageUI {
 
     //neu khong co static thi phai khai bao va khoi tao HomePageUI homePageUI = new HomePageUI();
     // neu co static thi chi can goi ten class HomePageUI la duoc

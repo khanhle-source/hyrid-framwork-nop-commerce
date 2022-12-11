@@ -7,9 +7,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObject.HomePageObject;
-import pageObject.LoginPageObject;
-import pageObject.RegisterPageObject;
+import pageObject.nopCommerce.portal.UserHomePageObject;
+import pageObject.nopCommerce.portal.UserLoginPageObject;
+import pageObject.nopCommerce.portal.UserRegisterPageObject;
 
 //1 class ke thua duoc 1 class, nhung 1 class ke thua dc nhieu interface
 public class Level6_Register_Login_PageGeneratorManager_2 extends BaseTest {
@@ -17,9 +17,9 @@ public class Level6_Register_Login_PageGeneratorManager_2 extends BaseTest {
     String emailAddress;
 
     String projectPath = System.getProperty("user.dir");
-    private HomePageObject homePage;
-    private RegisterPageObject registerPage;
-    private LoginPageObject loginPage;
+    private UserHomePageObject homePage;
+    private UserRegisterPageObject registerPage;
+    private UserLoginPageObject loginPage;
     private String firstName;
     private String lastName;
     private String password;
@@ -31,8 +31,8 @@ public class Level6_Register_Login_PageGeneratorManager_2 extends BaseTest {
     public void beforeClass(String browserName) {
         driver = getBrowerDriver(browserName);
 
-        homePage = new HomePageObject(driver);
-        loginPage = new LoginPageObject(driver);
+        homePage = new UserHomePageObject(driver);
+        loginPage = new UserLoginPageObject(driver);
 
         firstName = "khanh";
         lastName = "le";

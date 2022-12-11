@@ -1,13 +1,14 @@
 package com.nopcommerce.user;
 
 import common.BaseTest;
+import common.PageGeneratorManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObject.*;
+import pageObject.nopCommerce.portal.*;
 
 //1 class ke thua duoc 1 class, nhung 1 class ke thua dc nhieu interface
 public class Level6_Register_Login_PageGeneratorManager_3 extends BaseTest {
@@ -15,10 +16,10 @@ public class Level6_Register_Login_PageGeneratorManager_3 extends BaseTest {
     String emailAddress;
 
     String projectPath = System.getProperty("user.dir");
-    private HomePageObject homePage;
-    private RegisterPageObject registerPage;
-    private LoginPageObject loginPage;
-    private MyAccountPageObject myAccountPage;
+    private UserHomePageObject homePage;
+    private UserRegisterPageObject registerPage;
+    private UserLoginPageObject loginPage;
+    private UserMyAccountPageObject myAccountPage;
     private String firstName;
     private String lastName;
     private String password;

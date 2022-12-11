@@ -1,5 +1,5 @@
-package pageUIs;
+package userpageUIs;
 
-public class MyAccountPageUI {
+public class UserMyAccountPageUI {
     public static final String CUSTOMER_INFO_LINK =  "//li[@class='customer-info active']";
 }

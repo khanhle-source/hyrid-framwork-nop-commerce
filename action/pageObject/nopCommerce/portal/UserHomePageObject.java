@@ -1,11 +1,11 @@
-package pageObject;
+package pageObject.nopCommerce.portal;
 
 import common.BasePage;
+import common.PageGeneratorManager;
 import org.openqa.selenium.WebDriver;
-import pageUIs.HomePageUI;
-import pageUIs.LoginPageUI;
+import userpageUIs.UserHomePageUI;
 
-public class HomePageObject extends BasePage {
+public class UserHomePageObject extends BasePage {
     private WebDriver driver;
 
     //Hàm khởi tạo = Contructor
@@ -22,28 +22,28 @@ public class HomePageObject extends BasePage {
 
     // Biến toàn cục: sinh ra trong 1 class
     // Biến cục bộ: sinh ra trong 1 hàm (tham số/ phần thân/ block code)
- public HomePageObject (WebDriver driver) {
+ public UserHomePageObject(WebDriver driver) {
         this.driver = driver;
     }
 
-    public RegisterPageObject clicktoRegisterLink() {
-        waitForElementClickable(driver, HomePageUI.REGISTER_LINK);
-        clickToElement(driver, HomePageUI.REGISTER_LINK);
+    public UserRegisterPageObject clicktoRegisterLink() {
+        waitForElementClickable(driver, UserHomePageUI.REGISTER_LINK);
+        clickToElement(driver, UserHomePageUI.REGISTER_LINK);
         //2
         //return new RegisterPageObject(driver);
         //3
         return PageGeneratorManager.getRegisterPage(driver);
     }
 
-    public LoginPageObject clicktoLoginLink() {
-        waitForElementClickable(driver, HomePageUI.LOGIN_LINK);
-        clickToElement(driver, HomePageUI.LOGIN_LINK);
+    public UserLoginPageObject clicktoLoginLink() {
+        waitForElementClickable(driver, UserHomePageUI.LOGIN_LINK);
+        clickToElement(driver, UserHomePageUI.LOGIN_LINK);
         return PageGeneratorManager.getLoginPage(driver);
     }
 
-    public MyAccountPageObject clickMyAccountLink () {
-        waitForElementClickable(driver, HomePageUI.MYACCOUNT_LINK);
-        clickToElement(driver, HomePageUI.MYACCOUNT_LINK);
+    public UserMyAccountPageObject clickMyAccountLink () {
+        waitForElementClickable(driver, UserHomePageUI.MYACCOUNT_LINK);
+        clickToElement(driver, UserHomePageUI.MYACCOUNT_LINK);
         return PageGeneratorManager.getMyAccountPage(driver);
     }
 }

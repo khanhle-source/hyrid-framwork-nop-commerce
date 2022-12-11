@@ -1,26 +1,27 @@
 package com.nopcommerce.user;
 
 import common.BaseTest;
+import common.PageGeneratorManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObject.*;
+import pageObject.nopCommerce.portal.*;
 
 public class Level7_Switch_Page extends BaseTest {
     WebDriver driver;
     String emailAddress;
 
     String projectPath = System.getProperty("user.dir");
-    private HomePageObject homePage;
-    private RegisterPageObject registerPage;
-    private LoginPageObject loginPage;
-    private MyAccountPageObject myAccountPage;
-    private AddressPageObject myAddressPage;
-    private MyProductReviewPageObject myProductReviewPage;
-    private MyRewardPointPageObject myRewardPointPage;
+    private UserHomePageObject homePage;
+    private UserRegisterPageObject registerPage;
+    private UserLoginPageObject loginPage;
+    private UserMyAccountPageObject myAccountPage;
+    private UserAddressPageObject myAddressPage;
+    private UserMyProductReviewPageObject myProductReviewPage;
+    private UserMyRewardPointPageObject myRewardPointPage;
 
     private String firstName;
     private String lastName;

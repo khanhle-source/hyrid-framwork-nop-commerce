@@ -4,14 +4,14 @@
     <test name="Run on Chrome">
         <parameter name = "browser" value="chrome" />
         <classes>
-            <class name ="com.nopcommerce.user.Level7_Switch_Page"></class>
+            <class name ="com.nopcommerce.user.Level8_Switch_Role"></class>
         </classes>
     </test>
 
     <test name="Run on Firefox">
         <parameter name = "browser" value="firefox" />
         <classes>
-            <class name ="com.nopcommerce.user.Level7_Switch_Page"></class>
+            <class name ="com.nopcommerce.user.Level8_Switch_Role"></class>
         </classes>
     </test>
 

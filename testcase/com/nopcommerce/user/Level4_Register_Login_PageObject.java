@@ -2,18 +2,16 @@ package com.nopcommerce.user;
 
 import common.BaseTest;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObject.HomePageObject;
-import pageObject.LoginPageObject;
-import pageObject.RegisterPageObject;
+import pageObject.nopCommerce.portal.UserHomePageObject;
+import pageObject.nopCommerce.portal.UserLoginPageObject;
+import pageObject.nopCommerce.portal.UserRegisterPageObject;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 //1 class ke thua duoc 1 class, nhung 1 class ke thua dc nhieu interface
 public class Level4_Register_Login_PageObject extends BaseTest {
@@ -21,9 +19,9 @@ public class Level4_Register_Login_PageObject extends BaseTest {
     String emailAddress;
 
     String projectPath = System.getProperty("user.dir");
-    private HomePageObject homePage;
-    private RegisterPageObject registerPage;
-    private LoginPageObject loginPage;
+    private UserHomePageObject homePage;
+    private UserRegisterPageObject registerPage;
+    private UserLoginPageObject loginPage;
     private String firstName;
     private String lastName;
     private String password;
@@ -33,9 +31,9 @@ public class Level4_Register_Login_PageObject extends BaseTest {
     public void beforeClass(String browserName) {
         driver = getBrowerDriver(browserName);
 
-        homePage = new HomePageObject(driver);
-        registerPage = new RegisterPageObject(driver);
-        loginPage = new LoginPageObject(driver);
+        homePage = new UserHomePageObject(driver);
+        registerPage = new UserRegisterPageObject(driver);
+        loginPage = new UserLoginPageObject(driver);
 
         firstName = "khanh";
         lastName = "le";
