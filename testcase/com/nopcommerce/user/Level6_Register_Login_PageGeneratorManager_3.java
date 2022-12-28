@@ -26,10 +26,10 @@ public class Level6_Register_Login_PageGeneratorManager_3 extends BaseTest {
     private String existingEmail;
     private String existingPassword;
 
-    @Parameters("browser")
+    @Parameters({"browser", "environment"})
     @BeforeClass
-    public void beforeClass(String browserName) {
-        driver = getBrowerDriver(browserName);
+    public void beforeClass(String browserName, String environmentName) {
+        driver = getBrowerDriver(browserName, environmentName);
 
         homePage = PageGeneratorManager.getHomePage(driver);
 

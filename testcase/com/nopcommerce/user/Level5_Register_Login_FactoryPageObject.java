@@ -26,10 +26,10 @@ public class Level5_Register_Login_FactoryPageObject extends BaseTest {
     private String lastName;
     private String password;
 
-    @Parameters("browser")
+    @Parameters({"browser", "enviroment"})
     @BeforeClass
-    public void beforeClass(String browserName) {
-        driver = getBrowerDriver(browserName);
+    public void beforeClass(String browserName, String environmentName) {
+        driver = getBrowerDriver(browserName, environmentName);
 
         homePage = new HomePageObject(driver);
         registerPage = new RegisterPageObject(driver);
