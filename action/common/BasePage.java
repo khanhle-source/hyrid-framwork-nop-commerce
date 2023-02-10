@@ -1,6 +1,7 @@
 package common;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -12,7 +13,7 @@ import pageObject.nopCommerce.portal.UserAddressPageObject;
 import pageObject.nopCommerce.portal.UserHomePageObject;
 import pageObject.nopCommerce.portal.UserMyProductReviewPageObject;
 import pageObject.nopCommerce.portal.UserMyRewardPointPageObject;
-import userpageUIs.UserBasePageUI;
+import nopCommerce.userpageUIs.UserBasePageUI;
 
 import java.util.List;
 import java.util.Set;
@@ -57,7 +58,7 @@ public class BasePage {
     }
 
     // refesh page
-    protected void refreshPage (WebDriver driver) {
+    public void refreshPage (WebDriver driver) {
         driver.navigate().refresh();
     }
 
@@ -128,6 +129,12 @@ public class BasePage {
         return element;
     }
 
+    //get web element (Dynamic)
+    protected WebElement getDynamicWebElement (WebDriver driver, String locator, String... DynamicValues) {
+        WebElement element = driver.findElement(getByLocator( getDynamicLocator(locator,DynamicValues)));
+        return element;
+    }
+
     //get list web element
     protected List<WebElement> getListWebElement (WebDriver driver, String locator) {
         List<WebElement> elements = driver.findElements(getByLocator(locator));
@@ -149,6 +156,11 @@ public class BasePage {
         getWebElement(driver, locator).sendKeys(textValue);
     }
 
+    //sendkey to Element (dynamic)
+    protected void sendKeyToElement (WebDriver driver, String locator, String textValue, String... dynamicValues) {
+        getWebElement(driver, getDynamicLocator(locator, dynamicValues)).clear();
+        getWebElement(driver, getDynamicLocator(locator, dynamicValues)).sendKeys(textValue);
+    }
 
     //select item in dropdown
     protected void selectItemInDefaultDropdown (WebDriver driver, String locator, String textItem) {
@@ -186,7 +198,7 @@ public class BasePage {
     }
 
     //sleep in second
-    protected void sleepInSecond (long time) {
+    public void sleepInSecond (long time) {
         try {
             Thread.sleep(time *1000);
         }
@@ -241,6 +253,12 @@ public class BasePage {
         return  getWebElement(driver, locator).isDisplayed();
     }
 
+    //element display or not (Dynamic value)
+    protected boolean isElementDisplayed (WebDriver driver, String locator, String... dynamicValues) {
+       return getDynamicWebElement(driver,locator, dynamicValues).isDisplayed();
+
+    }
+
     //element enable or not
     protected boolean isElementEnable (WebDriver driver, String locator) {
         return  getWebElement(driver, locator).isEnabled();
@@ -267,6 +285,17 @@ public class BasePage {
         action.moveToElement(getWebElement(driver, locator)).perform();
     }
 
+    //send key from keyboard
+    public void pressKeyToElement (WebDriver driver, String locatorType, Keys key) {
+        Actions action = new Actions(driver);
+        action.sendKeys(getWebElement(driver,locatorType), key).perform();
+    }
+
+    //send key from keyboard (Dynamic)
+    public void pressKeyToElement (WebDriver driver, String locatorType, Keys key, String... dynamicValues) {
+        Actions action = new Actions(driver);
+        action.sendKeys(getDynamicLocator(locatorType, dynamicValues), key).perform();
+    }
 
     //scroll to bottom page using js
     protected void scrollToBottomPage(WebDriver driver) {
@@ -377,6 +406,12 @@ public class BasePage {
         explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByLocator(locator)));
     }
 
+    //wait for all element visible (Dynamic value)
+    protected void waitForAllElementVisible (WebDriver driver, String locator, String ... dynamicValue) {
+        WebDriverWait explicitWait = new WebDriverWait(driver, longtimeout);
+        explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByLocator( getDynamicLocator(locator,dynamicValue))));
+    }
+
     //wait for element invisible
     protected void waitForElementInvisible (WebDriver driver, String locator) {
         WebDriverWait explicitWait = new WebDriverWait(driver, longtimeout);
@@ -453,7 +488,7 @@ public class BasePage {
     private By getByLocator (String locatorType, String... values) {
         By by = null;
 
-        if (locatorType.startsWith("id=") || locatorType.startsWith("Id=") || locatorType.startsWith("ID=")) {
+      if (locatorType.startsWith("id=") || locatorType.startsWith("Id=") || locatorType.startsWith("ID=")) {
             by = By.id(locatorType.substring(3));
         }
         else if  (locatorType.startsWith("class=") || locatorType.startsWith("Class=") || locatorType.startsWith("CLASS=")) {

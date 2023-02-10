@@ -1,4 +1,4 @@
-package userpageUIs;
+package nopCommerce.userpageUIs;
 
 public class UserHomePageUI {
 

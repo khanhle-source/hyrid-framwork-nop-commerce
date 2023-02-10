@@ -1,4 +1,4 @@
-package userpageUIs;
+package nopCommerce.userpageUIs;
 
 public class UserBasePageUI {
     public static final String ADDRESS_LINK = "xpath=//div[@class='listbox']//li[contains(@class, 'customer-addresses')]";

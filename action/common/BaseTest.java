@@ -15,7 +15,7 @@ public class BaseTest {
     protected WebDriver driverBaseTest;
     private String projectPath = System.getProperty("user.dir");
 
-    protected WebDriver getBrowerDriver (String browserName, String environmentName) {
+    protected WebDriver getBrowerDriver (String browserName, String getURL) {
         if (browserName.equals("firefox")) {
             driverBaseTest =  WebDriverManager.firefoxdriver().create();
             //System.setProperty("webdriver.gecko.driver", projectPath + "/browserDriver/geckodriver");
@@ -30,12 +30,12 @@ public class BaseTest {
             throw new RuntimeException("Browser name invalid");
         }
         driverBaseTest.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
-        driverBaseTest.get(getEnvNameURL(environmentName));
+        driverBaseTest.get(getURL);
         return driverBaseTest;
 
     }
 
-    private String getEnvNameURL (String environmentName) {
+    protected String getEnvNameURL (String environmentName) {
         String url = null;
         switch (environmentName ) {
             case "prod":
