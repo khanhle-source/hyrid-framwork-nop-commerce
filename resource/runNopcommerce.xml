@@ -8,4 +8,12 @@
         </classes>
     </test>
 
+    <test name="Run on Firefox">
+        <parameter name = "browser" value="firefox" />
+        <classes>
+            <class name ="com.nopcommerce.user.Level8_Switch_Role"></class>
+        </classes>
+    </test>
+
+
 </suite>
