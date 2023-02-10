@@ -19,8 +19,8 @@ import java.util.Set;
 
 public class BasePage {
     //chua cac ham dung chung cho page (package)
-    private long longtimeout = 30;
-    private long shorttimeout = 5;
+    private long longtimeout = GlobalConstants.LONG_TIMEOUT;
+    private long shorttimeout = GlobalConstants.SHORT_TIMEOUT;
 
     public static BasePage getBasePageObject () {
         return new BasePage();
