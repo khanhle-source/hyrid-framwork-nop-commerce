@@ -29,7 +29,7 @@ public class BaseTest {
         else {
             throw new RuntimeException("Browser name invalid");
         }
-        driverBaseTest.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driverBaseTest.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
         driverBaseTest.get(getEnvNameURL(environmentName));
         return driverBaseTest;
 

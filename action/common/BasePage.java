@@ -19,8 +19,8 @@ import java.util.Set;
 
 public class BasePage {
     //chua cac ham dung chung cho page (package)
-    private long longtimeout = 30;
-    private long shorttimeout = 5;
+    private long longtimeout = GlobalConstants.LONG_TIMEOUT;
+    private long shorttimeout = GlobalConstants.SHORT_TIMEOUT;
 
     public static BasePage getBasePageObject () {
         return new BasePage();
@@ -137,6 +137,10 @@ public class BasePage {
     //click to Element
     protected void clickToElement (WebDriver driver, String locator) {
         getWebElement(driver, locator).click();
+    }
+
+    protected void clickToElement (WebDriver driver, String locator, String... dynamicValues) {
+        getWebElement(driver, getDynamicLocator(locator, dynamicValues)).click();
     }
 
     //sendkey to Element
@@ -391,6 +395,14 @@ public class BasePage {
         explicitWait.until(ExpectedConditions.elementToBeClickable(getByLocator(locator)));
     }
 
+    //wait for element clickable
+    protected void waitForElementClickable (WebDriver driver, String locator, String ...dynamicValue) {
+        WebDriverWait explicitWait = new WebDriverWait(driver, longtimeout);
+        explicitWait.until(ExpectedConditions.elementToBeClickable(getWebElement(driver, getDynamicLocator(locator, dynamicValue))));
+        //getByLocator(locator, dynamicValue)
+    }
+
+    // Level 7: Switch Page
     //open address page
     public UserAddressPageObject openAddressPage (WebDriver driver) {
         waitForElementClickable(driver, UserBasePageUI.ADDRESS_LINK);
@@ -398,6 +410,7 @@ public class BasePage {
         return PageGeneratorManager.getAddressPage(driver);
     }
 
+    // Level 7: Switch Page
     //open my reward points page
     public UserMyRewardPointPageObject openMyRewardPointPage (WebDriver driver) {
         waitForElementClickable(driver, UserBasePageUI.REWARD_POINT_LINK);
@@ -405,6 +418,7 @@ public class BasePage {
         return PageGeneratorManager.getMyRewardPoint(driver);
     }
 
+    // Level 7: Switch Page
     //open my product review page
     public UserMyProductReviewPageObject openMyProductReviewPage (WebDriver driver) {
         waitForElementClickable(driver, UserBasePageUI.PRODUCT_REVIEW_LINK);
@@ -412,12 +426,16 @@ public class BasePage {
         return PageGeneratorManager.getMyProductReview(driver);
     }
 
+    // Level 8: Switch Role
+    // click logout at user page
     public UserHomePageObject clickToLogoutLinkAtUserPage (WebDriver driver) {
         waitForElementClickable(driver, UserBasePageUI.LOGOUT_LINK_AT_USER);
         clickToElement(driver, UserBasePageUI.LOGOUT_LINK_AT_USER);
         return PageGeneratorManager.getHomePage(driver);
     }
 
+    // Level 8: Swith Role
+    // click logout at admin page
     public AdminLoginPageObject clickToLogoutLinkAtAdminPage (WebDriver driver) {
         waitForElementClickable(driver, UserBasePageUI.LOGOUT_LINK_AT_ADMIN);
         clickToElement(driver,UserBasePageUI.LOGOUT_LINK_AT_ADMIN);
@@ -429,7 +447,10 @@ public class BasePage {
         WebElement element = (WebElement) jsExecutor.executeScript("return arguments[0].shadowRoot;", getWebElement(driver,locator ));
         return element;
     }
-    private By getByLocator (String locatorType) {
+
+    // Level 9: Dynamic Locator
+    // return By element
+    private By getByLocator (String locatorType, String... values) {
         By by = null;
 
         if (locatorType.startsWith("id=") || locatorType.startsWith("Id=") || locatorType.startsWith("ID=")) {
@@ -449,8 +470,34 @@ public class BasePage {
         }
         else
             throw new RuntimeException("Locator type is not supported");
+
         System.out.println(locatorType);
         return by;
     }
+
+    private String getDynamicLocator (String locatorType, String... values) {
+        if  (locatorType.startsWith("xpath=") || locatorType.startsWith("Xpath=") || locatorType.startsWith("XPATH=")) {
+            locatorType = String.format(locatorType, (Object[]) values);
+        }
+        return locatorType;
+    }
+
+
+    public BasePage openPagesAtMyAccountByName (WebDriver driver, String pageName) {
+        waitForElementClickable(driver, UserBasePageUI.DYNAMIC_LINK, pageName);
+        clickToElement(driver, UserBasePageUI.DYNAMIC_LINK, pageName);
+        switch (pageName) {
+            case "Addresses" :
+                return PageGeneratorManager.getAddressPage(driver);
+            case "My product reviews" :
+                return PageGeneratorManager.getMyProductReview(driver);
+            case "Reward points":
+                return PageGeneratorManager.getMyRewardPoint(driver);
+            default:
+                throw new RuntimeException("Invalid page name at my account area");
+
+        }
+    }
+
 
 }
