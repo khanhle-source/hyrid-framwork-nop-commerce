@@ -8,4 +8,6 @@ public class HomePageUI {
     public static final String EACH_ROW_OF_EACH_PAGE = "xpath=//table[@class='qgrd']//tr";
     public static final String COUNTRY_OF_EACH_ROW = "xpath=//table[@class='qgrd']//tr[%s]/td[@data-key='country']";
     public static final String ALL_DATA_OF_EACH_ROW = "xpath=//table[@class='qgrd']//tr[%s]/td";
+    public static final String COLUMN_INDEX_BY_NAME = "xpath=//tr/th[text()='%s']/preceding-sibling::th";
+    public static final String TEXTBOX_BY_COLUMN_INDEX_AND_ROW_INDEX = "xpath=//tbody/tr[%s]/td[%s]/input";
 }

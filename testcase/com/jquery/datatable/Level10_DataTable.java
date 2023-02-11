@@ -11,10 +11,16 @@ import org.testng.annotations.Test;
 import pageObject.jQuery.HomepageObject;
 import pageObject.nopCommerce.portal.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Level10_DataTable extends BaseTest {
     WebDriver driver;
     HomepageObject homePage;
     String projectPath = System.getProperty("user.dir");
+    List<String> actualAllCountryValues = new ArrayList<String>();
+    List<String> expectedAllCountryValues = new ArrayList<String>();
+
 
     @Parameters({"browser", "url"})
     @BeforeClass
@@ -52,7 +58,7 @@ public class Level10_DataTable extends BaseTest {
         homePage.enterToColumn("Females", "53300");
         homePage.sleepInSecond(3);
     }
-*/
+
 
     @Test
     public void tc_02_getAllData() {
@@ -62,10 +68,23 @@ public class Level10_DataTable extends BaseTest {
         // return all value in table
         System.out.println(homePage.getAllDataOfAllTable ());
 
+        //verify 2 list
+        actualAllCountryValues = homePage.getAllDataOfAllTable();
+        Assert.assertEquals(actualAllCountryValues, expectedAllCountryValues);
     }
+*/
+    @Test
+    public void Table_04_Enter_To_Textbox_At_Any_Row () {
+        // Value de nhap lieu - tham so 1
+        // Row number: tai row nao
+        // Ex: nhap vao textbox tai dong so 3, 5, 2
+        // Column name: Album / Artist/ Year/ Price
+        homePage.enterToTextboxByColumnNameAtRowNumber ("Company", "1", "Hubble Ltd");
 
+        homePage.enterToTextboxByColumnNameAtRowNumber ("Company", "2", "Net Company");
+    }
     @AfterClass
     public void afterClass () {
-        driver.quit();
+        //driver.quit();
     }
 }

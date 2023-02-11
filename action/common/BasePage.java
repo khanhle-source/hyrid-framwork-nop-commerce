@@ -240,6 +240,11 @@ public class BasePage {
         return getListWebElement(driver, locator).size();
     }
 
+    //get elements size (Dynamic)
+    protected int getElementSize(WebDriver driver, String locator, String... dynamicValues) {
+        return getListWebElement(driver, locator,dynamicValues).size();
+    }
+
 
     //check dropdown list
     protected void checkToDefaultCheckbox (WebDriver driver, String locator) {

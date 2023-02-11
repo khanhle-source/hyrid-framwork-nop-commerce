@@ -66,4 +66,13 @@ public class HomepageObject extends BasePage {
         return allRowValueAllPage;
     }
 
+    public void enterToTextboxByColumnNameAtRowNumber (String colName, String rowNumber, String value) {
+        //Column index dua vao ten cot
+        int columnIndex = getElementSize (driver, HomePageUI.COLUMN_INDEX_BY_NAME, colName) +1;
+
+        //sendkey vao dong nao
+        waitForAllElementVisible (driver, HomePageUI.TEXTBOX_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, String.valueOf(columnIndex));
+        sendKeyToElement (driver,HomePageUI.TEXTBOX_BY_COLUMN_INDEX_AND_ROW_INDEX, value, rowNumber,String.valueOf(columnIndex));
+    }
+
 }
