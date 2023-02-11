@@ -8,12 +8,5 @@
         </classes>
     </test>
 
-    <test name="Run on Firefox">
-        <parameter name = "browser" value="firefox" />
-        <classes>
-            <class name ="com.jquery.datatable.Level10_DataTable"></class>
-        </classes>
-    </test>
-
 
 </suite>

@@ -41,7 +41,7 @@ public class Level10_DataTable extends BaseTest {
         homePage.sleepInSecond(3);
 
     }
-    */
+
 
     @Test
     public void tc_02_EnterIntoColumn()
@@ -52,8 +52,17 @@ public class Level10_DataTable extends BaseTest {
         homePage.enterToColumn("Females", "53300");
         homePage.sleepInSecond(3);
     }
+*/
 
+    @Test
+    public void tc_02_getAllData() {
+        // return all country (dupplicate)
+        System.out.println(homePage.getCountryEachRowOfAllPage ());
 
+        // return all value in table
+        System.out.println(homePage.getAllDataOfAllTable ());
+
+    }
 
     @AfterClass
     public void afterClass () {

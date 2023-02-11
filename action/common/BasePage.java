@@ -130,14 +130,16 @@ public class BasePage {
     }
 
     //get web element (Dynamic)
+    // locator=//table[@class='qgrd']//tr[%s]/td
+    // dynamic value = 1
     protected WebElement getDynamicWebElement (WebDriver driver, String locator, String... DynamicValues) {
         WebElement element = driver.findElement(getByLocator( getDynamicLocator(locator,DynamicValues)));
         return element;
     }
 
     //get list web element
-    protected List<WebElement> getListWebElement (WebDriver driver, String locator) {
-        List<WebElement> elements = driver.findElements(getByLocator(locator));
+    protected List<WebElement> getListWebElement (WebDriver driver, String locator, String... DynamicValues) {
+        List<WebElement> elements = driver.findElements(getByLocator( getDynamicLocator(locator,DynamicValues)));
         return elements;
     }
 
@@ -217,6 +219,12 @@ public class BasePage {
         return getWebElement(driver, locator).getText();
     }
 
+    //get element text (dynamic)
+    // locator=//table[@class='qgrd']//tr[%s]/td
+    // dynamic value = 1
+    protected String getElementText (WebDriver driver, String locator, String... dynamicValues) {
+        return getDynamicWebElement(driver,locator, dynamicValues).getText();
+    }
     //get element css value
     protected String getElementCssValue (WebDriver driver, String locator, String prop) {
         return getWebElement(driver, locator).getCssValue(prop);
@@ -231,6 +239,7 @@ public class BasePage {
     protected int getElementSize(WebDriver driver, String locator) {
         return getListWebElement(driver, locator).size();
     }
+
 
     //check dropdown list
     protected void checkToDefaultCheckbox (WebDriver driver, String locator) {
@@ -505,8 +514,7 @@ public class BasePage {
         }
         else
             throw new RuntimeException("Locator type is not supported");
-
-        System.out.println(locatorType);
+;
         return by;
     }
 
