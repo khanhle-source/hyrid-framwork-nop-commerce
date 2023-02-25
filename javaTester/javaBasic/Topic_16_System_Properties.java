@@ -1,5 +1,8 @@
 package javaBasic;
 
+import common.GlobalConstants;
+import org.testng.annotations.Test;
+
 import java.io.File;
 
 public class Topic_16_System_Properties {
@@ -12,4 +15,19 @@ public class Topic_16_System_Properties {
         System.out.println(PROJECT_PATH);
         System.out.println(UPLOAD_FILE_FOLDER);
     }
+
+    @Test
+    public void TC_07 () {
+        String filePath = GlobalConstants.UPLOAD_FILE;
+        String fullFileName = "";
+        String[] fileNames = {"Csharp.png", "Java.png", "Python.png"};
+
+        for (String file: fileNames) {
+            fullFileName = fullFileName + filePath + file + "\n";
+        }
+        fullFileName = fullFileName.trim();
+
+        System.out.println(fullFileName);
+    }
+
 }

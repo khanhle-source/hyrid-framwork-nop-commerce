@@ -1,15 +1,13 @@
-package com.jquery.datatable;
+package com.jquery;
 
 import common.BaseTest;
-import pageObject.jQuery.PageGeneratorManager;
+import pageObject.jQuery.datatable.PageGeneratorManager;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObject.jQuery.HomepageObject;
-import pageObject.nopCommerce.portal.*;
+import pageObject.jQuery.datatable.HomepageObject;
 
 import java.util.ArrayList;
 import java.util.List;

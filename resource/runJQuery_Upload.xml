@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="NopCommerce">
+    <parameter name = "url" value="https://blueimp.github.io/jQuery-File-Upload/" />
+    <test name="Run on Chrome">
+        <parameter name = "browser" value="chrome" />
+        <classes>
+            <class name ="com.jquery.Level11_UploadFile"></class>
+        </classes>
+    </test>
+
+
+</suite>

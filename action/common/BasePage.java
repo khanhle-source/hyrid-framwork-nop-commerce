@@ -1,5 +1,6 @@
 package common;
 
+import jQuery.pageUIs.UploadFiles.BasePageUI;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
@@ -451,6 +452,15 @@ public class BasePage {
         //getByLocator(locator, dynamicValue)
     }
 
+    public void uploadMultipleFiles (WebDriver driver, String... fileNames) {
+        String filePath = GlobalConstants.UPLOAD_FILE;
+        String fullFileName = "";
+        for (String file: fileNames) {
+            fullFileName = fullFileName + filePath + file + "\n";
+        }
+        fullFileName = fullFileName.trim();
+        getWebElement(driver, BasePageUI.UPLOAD_FILE).sendKeys(fullFileName);
+    }
     // Level 7: Switch Page
     //open address page
     public UserAddressPageObject openAddressPage (WebDriver driver) {

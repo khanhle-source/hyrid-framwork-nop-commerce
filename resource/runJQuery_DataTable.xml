@@ -5,7 +5,7 @@
     <test name="Run on Chrome">
         <parameter name = "browser" value="chrome" />
         <classes>
-            <class name ="com.jquery.datatable.Level10_DataTable"></class>
+            <class name ="com.jquery.Level10_DataTable"></class>
         </classes>
     </test>
 
