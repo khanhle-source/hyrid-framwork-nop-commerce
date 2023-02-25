@@ -409,6 +409,15 @@ public class BasePage {
         return status;
     }
 
+    //check image loaded (dynamic
+    protected boolean isImageLoaded(WebDriver driver,String locator, String... dynamicValues) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        boolean status = (boolean) jsExecutor.executeScript(
+                "return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0",
+                getDynamicWebElement(driver, locator,dynamicValues ));
+        return status;
+    }
+
     //wait for element visible
     protected void waitForElementVisible (WebDriver driver, String locator) {
         WebDriverWait explicitWait = new WebDriverWait(driver, longtimeout);
@@ -459,7 +468,7 @@ public class BasePage {
             fullFileName = fullFileName + filePath + file + "\n";
         }
         fullFileName = fullFileName.trim();
-        getWebElement(driver, BasePageUI.UPLOAD_FILE).sendKeys(fullFileName);
+        getDynamicWebElement(driver, BasePageUI.UPLOAD_FILE).sendKeys(fullFileName);
     }
     // Level 7: Switch Page
     //open address page
