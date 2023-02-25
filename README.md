@@ -1,3 +1,3 @@
 # hyrid-framwork-nop-commerce
-IDE: Intelkij IDEA CE
+IDE: Intelij IDEA CE
 Run file resource/runNopcommerce.xml
