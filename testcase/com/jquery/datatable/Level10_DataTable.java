@@ -85,6 +85,6 @@ public class Level10_DataTable extends BaseTest {
     }
     @AfterClass
     public void afterClass () {
-        //driver.quit();
+        driver.quit();
     }
 }
