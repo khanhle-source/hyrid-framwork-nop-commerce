@@ -15,6 +15,9 @@ public class BaseTest {
     protected WebDriver driverBaseTest;
     private String projectPath = System.getProperty("user.dir");
 
+    public WebDriver getDriverInstant () {
+        return this.driverBaseTest;
+    }
     protected WebDriver getBrowerDriver (String browserName, String getURL) {
         if (browserName.equals("firefox")) {
             driverBaseTest =  WebDriverManager.firefoxdriver().create();
@@ -22,9 +25,9 @@ public class BaseTest {
           //  driverBaseTest = new FirefoxDriver();
         }
         else if (browserName.equals("chrome")) {
-            driverBaseTest = WebDriverManager.chromedriver().create();
-            //System.setProperty("webdriver.chrome.driver", projectPath + "/browserDriver/chromedriver");
-           // driverBaseTest = new ChromeDriver();
+            //driverBaseTest = WebDriverManager.chromedriver().create();
+            System.setProperty("webdriver.chrome.driver", projectPath + "/browserDriver/chromedriver");
+            driverBaseTest = new ChromeDriver();
         }
         else {
             throw new RuntimeException("Browser name invalid");

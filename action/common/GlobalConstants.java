@@ -35,6 +35,8 @@ public class GlobalConstants {
     public static final long LONG_TIMEOUT = 10;
     public static final long RETRY_TEST_FAIL = 3;
 
+    public static final String REPORTING_SCREENSHOT = PROJECT_PATH + File.separator + "ReportNGScreenShots" + File.separator;
+    public static final String JAVA_VERSION = System.getProperty("java.version");
     //note: bien static la bien co the truy cap tai bat cu cho nao trong project
 
 }

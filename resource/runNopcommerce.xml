@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="NopCommerce">
-    <parameter name = "environment" value="prod" />
+    <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+        <listener class-name="reportConfig.ReportNGListener" />
+        <listener class-name="reportConfig.ExtentTestListener"> </listener>
+    </listeners>
+
+    <parameter name = "environment" value="https://demo.nopcommerce.com/" />
     <test name="Run on Chrome">
         <parameter name = "browser" value="chrome" />
         <classes>
-            <class name ="com.nopcommerce.user.Level9_Dynamic_Locator"></class>
+            <class name ="com.nopcommerce.user.Level14_ExtentReport"></class>
         </classes>
     </test>
 
     <test name="Run on Firefox">
         <parameter name = "browser" value="firefox" />
         <classes>
-            <class name ="com.nopcommerce.user.Level8_Switch_Role"></class>
+            <class name ="com.nopcommerce.user.Level14_ExtentReport"></class>
         </classes>
     </test>
-
 
 </suite>

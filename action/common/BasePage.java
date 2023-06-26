@@ -171,6 +171,12 @@ public class BasePage {
         select.selectByValue(textItem);
     }
 
+    //select item in dropdown (dynamic)
+    protected void selectItemInDefaultDropdown (WebDriver driver, String locator, String textItem, String... dynamicValues) {
+        Select select = new Select(getDynamicWebElement(driver,locator, dynamicValues));
+        select.selectByValue(textItem);
+    }
+
     //get first selected value in dropdown list
     protected String getSelectedItemDefaultDropdown (WebDriver driver, String locator) {
         Select select = new Select(getWebElement(driver,locator));
@@ -255,9 +261,25 @@ public class BasePage {
         }
     }
 
+    //check dropdown list (dynamic)
+    protected void checkToDefaultCheckbox (WebDriver driver, String locator, String... dynamicValues) {
+        WebElement element = getDynamicWebElement(driver,locator, dynamicValues);
+        if(!element.isSelected()) {
+            element.click();
+        }
+    }
+
     //uncheck dropdown list
     protected void uncheckToDefaultCheckbox (WebDriver driver, String locator) {
         WebElement element = getWebElement(driver, locator);
+        if(element.isSelected()) {
+            element.click();
+        }
+    }
+
+    //uncheck dropdown list (dynamic)
+    protected void uncheckToDefaultCheckbox (WebDriver driver, String locator, String... dynamicValues) {
+        WebElement element = getDynamicWebElement(driver,locator, dynamicValues);
         if(element.isSelected()) {
             element.click();
         }
@@ -454,7 +476,7 @@ public class BasePage {
         explicitWait.until(ExpectedConditions.elementToBeClickable(getByLocator(locator)));
     }
 
-    //wait for element clickable
+    //wait for element clickable (dynamic)
     protected void waitForElementClickable (WebDriver driver, String locator, String ...dynamicValue) {
         WebDriverWait explicitWait = new WebDriverWait(driver, longtimeout);
         explicitWait.until(ExpectedConditions.elementToBeClickable(getWebElement(driver, getDynamicLocator(locator, dynamicValue))));

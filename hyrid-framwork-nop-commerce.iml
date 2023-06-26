@@ -30,5 +30,7 @@
     <orderEntry type="library" name="commons-codec-1.13" level="project" />
     <orderEntry type="library" name="bcpkix-jdk15on-1.64" level="project" />
     <orderEntry type="library" name="bcpkix-jdk15on-1.64 (2)" level="project" />
+    <orderEntry type="library" name="commons-collections-3.2.1" level="project" />
+    <orderEntry type="library" name="extentreports-5.0.8" level="project" />
   </component>
 </module>
