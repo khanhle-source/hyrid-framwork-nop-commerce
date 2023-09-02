@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="NopCommerce">
-    <listeners>
-    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
-        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
-        <listener class-name="reportConfig.ReportNGListener" />
-        <listener class-name="reportConfig.ExtentTestListener"> </listener>
-    </listeners>
-
     <parameter name = "environment" value="https://demo.nopcommerce.com/" />
     <test name="Run on Chrome">
         <parameter name = "browser" value="chrome" />
         <classes>
-            <class name ="com.nopcommerce.user.Level14_ExtentReport"></class>
+            <class name ="common.Common_Register_Cookie"></class>
+            <class name="com.nopcommerce.user.Level16_Share_Data_Cookies"></class>
+
         </classes>
     </test>
 
     <test name="Run on Firefox">
         <parameter name = "browser" value="firefox" />
         <classes>
-            <class name ="com.nopcommerce.user.Level14_ExtentReport"></class>
+            <class name ="common.Common_Register_User"></class>
+            <class name="com.nopcommerce.user.Level16_Share_Data_User_Account"></class>
         </classes>
     </test>
 
