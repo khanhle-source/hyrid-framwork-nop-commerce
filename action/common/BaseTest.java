@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.io.IOException;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -52,6 +53,52 @@ public class BaseTest {
         }
         return url;
     }
+
+    public void closeBrowserDriver(WebDriver driver) {
+        String cmd = null;
+        try {
+            String osName = System.getProperty("os.name").toLowerCase();
+            String driverInstanceName = driver.toString().toLowerCase();
+
+            String browserDriverName = null;
+
+            if (driverInstanceName.contains("chrome")) {
+                browserDriverName = "chromedriver";
+            } else if (driverInstanceName.contains("internetexplorer")) {
+                browserDriverName = "IEDriverServer";
+            } else if (driverInstanceName.contains("firefox")) {
+                browserDriverName = "geckodriver";
+            } else if (driverInstanceName.contains("edge")) {
+                browserDriverName = "msedgedriver";
+            } else if (driverInstanceName.contains("opera")) {
+                browserDriverName = "operadriver";
+            } else {
+                browserDriverName = "safaridriver";
+            }
+
+            if (osName.contains("window")) {
+                cmd = "taskkill /F /FI \"IMAGENAME eq " + browserDriverName + "*\"";
+            } else {
+                cmd = "pkill " + browserDriverName;
+            }
+
+            if (driver != null) {
+                driver.manage().deleteAllCookies();
+                driver.quit();
+            }
+        } catch (Exception e) {
+        } finally {
+            try {
+                Process process = Runtime.getRuntime().exec(cmd);
+                process.waitFor();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
     protected int random () {
         Random rnd = new Random();

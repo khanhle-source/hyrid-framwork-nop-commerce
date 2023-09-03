@@ -4,8 +4,8 @@
     <test name="Run on Chrome">
         <parameter name = "browser" value="chrome" />
         <classes>
-            <class name ="common.Common_Register_Cookie"></class>
-            <class name="com.nopcommerce.user.Level16_Share_Data_Cookies"></class>
+            <class name ="common.Common_Register_User"></class>
+            <class name="com.nopcommerce.user.Level17_Close_Browser_Driver"></class>
 
         </classes>
     </test>
