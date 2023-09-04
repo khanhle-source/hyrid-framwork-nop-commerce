@@ -4,8 +4,7 @@
     <test name="Run on Chrome">
         <parameter name = "browser" value="chrome" />
         <classes>
-            <class name ="common.Common_Register_User"></class>
-            <class name="com.nopcommerce.user.Level17_Close_Browser_Driver"></class>
+            <class name="com.nopcommerce.user.Level18_Pattern_Object"></class>
 
         </classes>
     </test>

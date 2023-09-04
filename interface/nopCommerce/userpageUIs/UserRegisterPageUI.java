@@ -15,4 +15,6 @@ public class UserRegisterPageUI {
     public static final String REGISTER_SUCESS_MESSAGE = "class=result";
     public static final String LOGOUT_LINK = "xpath=//a[@class='ico-logout']";
     public static final String EXISTING_EMAIL_ERROR_MESSAGE = "xpath=//div[contains(@class,'message-error')]//li";
+
+
 }

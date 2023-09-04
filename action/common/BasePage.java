@@ -1,8 +1,8 @@
 package common;
 
 import jQuery.pageUIs.UploadFiles.BasePageUI;
+import nopCommerce.userpageUIs.UserRegisterPageUI;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -16,7 +16,6 @@ import pageObject.nopCommerce.portal.UserMyProductReviewPageObject;
 import pageObject.nopCommerce.portal.UserMyRewardPointPageObject;
 import nopCommerce.userpageUIs.UserBasePageUI;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
@@ -222,6 +221,9 @@ public class BasePage {
         return getWebElement(driver, locator).getAttribute(attribute);
     }
 
+    protected  String getElementAttribute (WebDriver driver, String locator, String attribute, String ... dynamicValues) {
+        return getWebElement(driver, getDynamicLocator(locator, dynamicValues)).getAttribute(attribute);
+    }
     //get element text
     protected String getElementText (WebDriver driver, String locator) {
         return getWebElement(driver, locator).getText();
@@ -432,7 +434,7 @@ public class BasePage {
         return status;
     }
 
-    //check image loaded (dynamic
+    //check image loaded (dynamic)
     protected boolean isImageLoaded(WebDriver driver,String locator, String... dynamicValues) {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         boolean status = (boolean) jsExecutor.executeScript(
@@ -447,6 +449,11 @@ public class BasePage {
         explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locator)));
     }
 
+    //wait for element visible (dynamic value)
+    protected void waitForElementVisible (WebDriver driver, String locator, String ... dynamicValue) {
+        WebDriverWait explicitWait = new WebDriverWait(driver, longtimeout);
+        explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByLocator( getDynamicLocator(locator,dynamicValue))));
+    }
     //wait for all element visible
     protected void waitForAllElementVisible (WebDriver driver, String locator) {
         WebDriverWait explicitWait = new WebDriverWait(driver, longtimeout);
@@ -601,5 +608,35 @@ public class BasePage {
     }
 
 
+    // Pattern Object
+    public void openPagesAtMyAccountByPageName (WebDriver driver, String pageName) {
+        waitForElementClickable(driver, UserBasePageUI.DYNAMIC_PAGES_AT_MY_ACCOUNT_AREA, pageName);
+        clickToElement(driver,UserBasePageUI.DYNAMIC_PAGES_AT_MY_ACCOUNT_AREA, pageName );
+    }
+    public void inputToTextboxByID (WebDriver driver, String textboxID, String value) {
+        waitForElementVisible(driver, UserBasePageUI.DYNAMIC_TEXTBOX_BY_ID, value);
+        sendKeyToElement(driver, UserBasePageUI.DYNAMIC_TEXTBOX_BY_ID, textboxID, value);
+    }
+    public void clickToButtonByText (WebDriver driver, String buttonText) {
+        waitForElementClickable(driver, UserBasePageUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
+        clickToElement(driver,UserBasePageUI.DYNAMIC_BUTTON_BY_TEXT, buttonText );
+    }
+
+    public void selectToDropdownByName (WebDriver driver, String dropdownAttributeName, String itemValue) {
+        waitForElementClickable(driver, UserBasePageUI.DYNAMIC_DROPDOWN_BY_NAME, dropdownAttributeName);
+        selectItemInDefaultDropdown(driver,UserBasePageUI.DYNAMIC_DROPDOWN_BY_NAME, itemValue, dropdownAttributeName);
+    }
+
+    public void selectRadioButtonByName (WebDriver driver, String radioButtonName) {
+        waitForElementClickable(driver, UserBasePageUI.DYNAMIC_RADIO_BUTTON_BY_NAME, radioButtonName);
+        checkToDefaultCheckbox(driver, UserBasePageUI.DYNAMIC_RADIO_BUTTON_BY_NAME, radioButtonName );
+
+    }
+
+    public String getTextboxValueByID (WebDriver driver, String textboxID) {
+        waitForElementVisible(driver, UserBasePageUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+        return getElementAttribute(driver, UserBasePageUI.DYNAMIC_TEXTBOX_BY_ID, "value", textboxID);
+
+    }
 
 }
