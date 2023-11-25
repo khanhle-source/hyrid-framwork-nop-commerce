@@ -41,10 +41,6 @@ public class Common_Register_Cookie extends BaseTest {
         password ="123456";
         emailAddress = "afc" + random() + "@email.vn";
 
-    }
-
-    @Test
-    public void tc_01_Register_Success () {
         homePage.clicktoRegisterLink();
         registerPage.inputToFirstNameTextbox(firstName);
         registerPage.inputToLastNameTextbox(lastName);
@@ -60,6 +56,13 @@ public class Common_Register_Cookie extends BaseTest {
         homePage = loginPage.clickToLoginButton();
 
         LoggedCookies = homePage.getAllCookies(driver);
+
+
+
+    }
+
+    @Test
+    public void tc_01_Register_Success () {
 
     }
 

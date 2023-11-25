@@ -3,6 +3,7 @@ package com.nopcommerce.user;
 import common.BaseTest;
 import common.Common_Register_Cookie;
 import common.Common_Register_User;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -15,17 +16,14 @@ import pageObject.nopCommerce.portal.UserMyAccountPageObject;
 import pageObject.nopCommerce.portal.UserRegisterPageObject;
 
 import java.util.Random;
+import java.util.Set;
 
-//1 class ke thua duoc 1 class, nhung 1 class ke thua dc nhieu interface
 public class Level16_Share_Data_Cookies extends BaseTest {
     WebDriver driver;
-
 
     private UserHomePageObject homePage;
     private UserLoginPageObject loginPage;
 
-    private String password;
-    private String emailAddress;
 
     @Parameters({"browser", "environment"})
     @BeforeClass
@@ -35,12 +33,8 @@ public class Level16_Share_Data_Cookies extends BaseTest {
         homePage = new UserHomePageObject(driver);
         loginPage = new UserLoginPageObject(driver);
 
-        emailAddress = Common_Register_User.emailAddress;
-        password = Common_Register_User.password;
-
-        loginPage = homePage.clicktoLoginLink();
+        homePage.clicktoLoginLink();
         loginPage.setCookies(driver, Common_Register_Cookie.LoggedCookies);
-
         loginPage.refreshPage(driver);
     }
 
