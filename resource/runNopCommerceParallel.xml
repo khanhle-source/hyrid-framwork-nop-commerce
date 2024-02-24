@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="NopCommerce" parallel ="classes">
+    <parameter name = "environment" value="https://demo.nopcommerce.com/" />
+    <test name="Run on Chrome">
+        <parameter name = "browser" value="chrome" />
+        <classes>
+            <class name="com.nopcommerce.user.Topic19_ParallelClass_01"></class>
+            <class name="com.nopcommerce.user.Topic19_ParallelClass_02"></class>
+            <class name="com.nopcommerce.user.Topic19_ParallelClass_03"></class>
+            <class name="com.nopcommerce.user.Topic19_ParallelClass_04"></class>
+        </classes>
+    </test>
+
+</suite>

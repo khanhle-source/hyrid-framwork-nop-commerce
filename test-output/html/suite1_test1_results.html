@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Test Results Report - Run on Chrome</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>Run on Chrome</h1>
+<p>
+  Test duration: 28.775s
+</p>
+
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.nopcommerce.user.Level14_ExtentReport</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  User_02_Login
+      </td>
+  <td class="duration">
+    10.110s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">public void com.nopcommerce.user.Level14_ExtentReport.User_02_Login(java.lang.reflect.Method)</span><br />
+    
+            <div class="testOutput">
+                        <br><a target="_blank" href="file:////Users/hubblemacbookpro/Automation Training/hyrid-framwork-nop-commerce/ReportNGScreenShots/User_02_Login_26_06_2023_11_52_46.png"><img src="file:////Users/hubblemacbookpro/Automation Training/hyrid-framwork-nop-commerce/ReportNGScreenShots/User_02_Login_26_06_2023_11_52_46.png" height='100' width='150'/> </a></br>
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[@class=&apos;ico-logout&apos;] (tried for 10 second(s) with 500 milliseconds interval)</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)<br />
+              org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)<br />
+              common.BasePage.waitForElementClickable(BasePage.java:476)<br />
+              pageObject.nopCommerce.portal.UserRegisterPageObject.clickToLogoutLink(UserRegisterPageObject.java:78)<br />
+              com.nopcommerce.user.Level14_ExtentReport.User_02_Login(Level14_ExtentReport.java:80)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:566)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:583)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:648)<br />
+              org.testng.TestRunner.run(TestRunner.java:505)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:455)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:364)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1137)<br />
+              org.testng.TestNG.runSuites(TestNG.java:1049)<br />
+              org.testng.TestNG.run(TestNG.java:1017)<br />
+              com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
+              com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@class=&apos;ico-logout&apos;]&quot;}<br/>
+&nbsp; (Session info: chrome=114.0.5735.133)<br/>
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;<br/>
+System info: host: &apos;MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:fa:2a40:8e0c:c77%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;11.0.6&apos;<br/>
+Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.133, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/dr/yqjms6cj213...}, goog:chromeOptions: {debuggerAddress: localhost:62316}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}<br/>
+Session ID: 334728f7fa2c1c2c06e8cd1bfb650818<br/>
+*** Element info: {Using=xpath, value=//a[@class=&apos;ico-logout&apos;]}</a><br />
+        <div class="stackTrace" id="exception-1">
+                      java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
+                      java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)<br />
+                      java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
+                      java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)<br />
+                      org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)<br />
+                      org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)<br />
+                      org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)<br />
+                      org.openqa.selenium.By$ByXPath.findElement(By.java:353)<br />
+                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)<br />
+                      org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)<br />
+                      org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)<br />
+                      common.BasePage.waitForElementClickable(BasePage.java:476)<br />
+                      pageObject.nopCommerce.portal.UserRegisterPageObject.clickToLogoutLink(UserRegisterPageObject.java:78)<br />
+                      com.nopcommerce.user.Level14_ExtentReport.User_02_Login(Level14_ExtentReport.java:80)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+                      java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.base/java.lang.reflect.Method.invoke(Method.java:566)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+                      org.testng.internal.Invoker.invokeMethod(Invoker.java:583)<br />
+                      org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)<br />
+                      org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:648)<br />
+                      org.testng.TestRunner.run(TestRunner.java:505)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:455)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:364)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1137)<br />
+                      org.testng.TestNG.runSuites(TestNG.java:1049)<br />
+                      org.testng.TestNG.run(TestNG.java:1017)<br />
+                      com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br />
+                      com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)<br />
+                  </div>
+          </div>
+      </td>
+</tr>
+      </table>
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.nopcommerce.user.Level14_ExtentReport</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  User_01_Register
+      </td>
+  <td class="duration">
+    8.965s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">public void com.nopcommerce.user.Level14_ExtentReport.User_01_Register(java.lang.reflect.Method)</span><br />
+    
+        
+
+      </td>
+</tr>
+      </table>
+  
+</body>
+</html>
