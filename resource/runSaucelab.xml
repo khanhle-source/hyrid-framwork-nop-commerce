@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Saucelab - Sort">
+    <parameter name = "environment" value="https://www.saucedemo.com/" />
+    <test name="Run on Chrome">
+        <parameter name = "browser" value="chrome" />
+        <classes>
+            <class name="com.nopcommerce.user.Topic20_Sort_Data_Ascending_Descending"></class>
+        </classes>
+    </test>
+
+</suite>
