@@ -1,0 +1,4 @@
+// Get random number by date time minutes second (no duplicate) 
+public static long getRandomNumberByDateTime () {
+return Calendar.getInstance().getTimeInMillis() % 100000;
+}
